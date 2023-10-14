@@ -1,0 +1,168 @@
+#
+# Translators:
+# Tom Konda <tom.konda.dev@gmail.com>, 2020
+# Shu Higashi <higa432@gmail.com>, 2021
+#
+msgid ""
+msgstr ""
+"Last-Translator: Shu Higashi <higa432@gmail.com>, 2021\n"
+"Language-Team: Japanese (https://www.transifex.com/openstreetmap-france/"
+"teams/17462/ja/)\n"
+"Language: ja\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Uncompromising validation of transit data"
+msgstr "乗り換えデータの妥協のないバリデーション"
+
+msgid "Missing transportation mode, add a tag route = bus/coach/tram/etc"
+msgstr ""
+"transportation modeがありません、route = bus/coach/tram/etcタグをいずれか追加"
+"します"
+
+msgid "Missing transportation mode, change tag route to route_master"
+msgstr "transportation modeがありません、routeタグをroute_masterに変更します"
+
+msgid ""
+"Missing public_transport:version tag on a public_transport route relation"
+msgstr ""
+" public_transportルートリレーションにpublic_transport:versionタグがない "
+
+msgid "Missing network tag on a public_transport relation"
+msgstr "public_transportリレーションにnetworkタグがない "
+
+msgid "Missing operator tag on a public_transport relation"
+msgstr "public_transportリレーションにoperatorタグがない"
+
+msgid "Missing ref tag for line number on a public_transport relation"
+msgstr "public_transportリレーションに路線番号を示すrefタグがない "
+
+msgid "Missing from/to tag on a public_transport route relation"
+msgstr "public_transportリレーションにfromとtoのタグがない "
+
+msgid "The stops may not be in the right order"
+msgstr "stopの順番が誤っている可能性があります"
+
+msgid "Is it a bus stop or a bus station?"
+msgstr "バス停またはバスターミナルのいずれかです。"
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the road (stop_position)"
+msgstr "停止場所 (platform)または道路上の停止位置(stop_position)を指定します"
+
+msgid "Is this a bus stop? add the tag highway=bus_stop"
+msgstr "これがバス停ならば、highway=bus_stopのタグを追加してください"
+
+msgid "Check if the note can be deleted"
+msgstr "メモを削除できるかチェックします"
+
+msgid "The network should be on the transport lines and not on the stops"
+msgstr "ネットワークはstopではなく輸送ライン上にあるべきです"
+
+msgid "The operator should be on the transport lines and not on the stops"
+msgstr "operatorはstopではなく輸送ライン上にあるべきです"
+
+msgid ""
+"The line variant does not belong to any line, add it to the route_master "
+"relation"
+msgstr ""
+"lineのバリアントがどのlineにも属していません、route_master relationに追加しま"
+"す"
+
+msgid "The stop is not served by any line, add it to a route relation"
+msgstr "stopは任意のlineとして提供されていません、route relationに追加します"
+
+msgid "Missing public_transport tag on a public transport stop"
+msgstr "public_transportタグが公共交通機関の停止場所にない "
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the rails (stop_position)"
+msgstr "停止場所 (platform)または鉄道上の停止位置(stop_position)を指定します"
+
+msgid "Missing legacy tag on a public transport stop"
+msgstr "公共交通機関の停止場所に旧式のタグがない"
+
+msgid ""
+"The network tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr "networkタグはrouteとroute_masterで同じであるべきです: {0} vs {1}"
+
+msgid ""
+"The operator tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr "operatorタグはrouteとroute_masterで同じであるべきです: {0} vs {1}"
+
+msgid ""
+"The ref tag should be the same for the route and the route_master : {0} vs "
+"{1}"
+msgstr "refタグはrouteとroute_masterで同じであるべきです: {0} vs {1}"
+
+msgid ""
+"The colour tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr "colourタグはrouteとroute_masterで同じであるべきです: {0} vs {1}"
+
+msgid ""
+"The public transport mode should be the same for the route and the "
+"route_master : {0} vs {1}"
+msgstr ""
+"public transport modeはroute及びroute_masterと同じであるべきです : {0} vs {1}"
+
+msgid "Check the colour tag"
+msgstr "colourタグをチェックしてください"
+
+msgid "The colour code should start with '#' followed by 3 or 6 digits"
+msgstr "カラーコードは'#'から始まり、続けて16進数の3または6桁であるべきです"
+
+msgid "The color of the public transport line should be in a colour tag"
+msgstr "公共交通機関のラインカラーはcolourタグにあるべきです"
+
+msgid "A bus stop is supposed to be a node"
+msgstr "バス停はノードであることが想定されています"
+
+msgid "The interval is invalid (try a number of minutes)"
+msgstr "intervalが無効です(分指定で試してください)"
+
+msgid "The duration is invalid (try a number of minutes)"
+msgstr "durationが無効です(分指定で試してください)"
+
+msgid "Missing interval tag to specify the main interval"
+msgstr "主intervalを指定するintervalタグがない"
+
+msgid "Missing opening_hours tag"
+msgstr "opening_hoursタグがない"
+
+msgid "Missing name on a public transport stop"
+msgstr "公共交通機関の停止場所にnameがない"
+
+msgid "Check the operator tag : this operator does not exist, it may be a typo"
+msgstr "operatorタグを確認: このoperatorは存在せず、typoかもしれません"
+
+msgid "Check the network tag : this network does not exist, it may be a typo"
+msgstr "networkタグを確認 : このnetworkは存在せずtypoかもしれません"
+
+msgid ""
+"A bus station is usually a large area where many buses stop, check if you "
+"can draw this area"
+msgstr ""
+"バス・ステーションは通常多くのバスが停まる大きなエリアです、このエリアを描け"
+"るかどうか確認してください"
+
+msgid "Is this a bus or tram stop ? Add a tag to precise the kind of platform"
+msgstr ""
+"このstopはバス用ですかトラム用ですか？platformの種類を詳述するタグを追加しま"
+"す"
+
+msgid "Subway entrances should be mapped as nodes"
+msgstr "地下鉄の入口はノードでマッピングします"
+
+msgid ""
+"The station entrance should be part of a building or a highway (steps, "
+"footway, etc)"
+msgstr "駅の入口は建物または道路(steps, footway, etc)の一部であるべきです"
+
+msgid ""
+"The station entrance should be in part of a station: add it to a stop_area "
+"relation"
+msgstr ""

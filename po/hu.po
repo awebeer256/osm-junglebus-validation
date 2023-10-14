@@ -1,0 +1,199 @@
+#
+# Translators:
+# frodrigo <fred.rodrigo@gmail.com>, 2018
+# Gábor Babos <gabor.babos@gmail.com>, 2020
+#
+msgid ""
+msgstr ""
+"Last-Translator: Gábor Babos <gabor.babos@gmail.com>, 2020\n"
+"Language-Team: Hungarian (https://www.transifex.com/openstreetmap-france/"
+"teams/17462/hu/)\n"
+"Language: hu\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Uncompromising validation of transit data"
+msgstr "Tömegközlekedési adatok teljes körű érvényesítése"
+
+msgid "Missing transportation mode, add a tag route = bus/coach/tram/etc"
+msgstr ""
+"Hiányzik a közlekedési mód. Adjon hozzá egy [route=bus/coach/tram/stb.] "
+"címkét"
+
+msgid "Missing transportation mode, change tag route to route_master"
+msgstr ""
+"Hiányzik a közlekedési mód. Módosítsa a [route] címkét erre: [route_master]"
+
+msgid ""
+"Missing public_transport:version tag on a public_transport route relation"
+msgstr ""
+"Hiányzik a [public_transport:version] címke a [public_transport] "
+"útvonalkapcsolatról"
+
+msgid "Missing network tag on a public_transport relation"
+msgstr "Hiányzik a [network]hálózatcímke a [public_transport] kapcsolatról"
+
+msgid "Missing operator tag on a public_transport relation"
+msgstr ""
+"Hiányzik az [operator] üzemeltető címke a [public_transport] kapcsolatról"
+
+msgid "Missing ref tag for line number on a public_transport relation"
+msgstr ""
+"Hiányzik a vonal számát jelölő [ref] címke a [public_transport] kapcsolatról"
+
+msgid "Missing from/to tag on a public_transport route relation"
+msgstr "Hiányzik a [from/to] címke a [public_transport] [route] kapcsolatról"
+
+msgid "The stops may not be in the right order"
+msgstr "Lehet, hogy a megállók helytelen sorrendben vannak"
+
+msgid "Is it a bus stop or a bus station?"
+msgstr "Ez buszmegálló vagy buszállomás?"
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the road (stop_position)"
+msgstr ""
+"Határozza meg, hogy ez egy megálló/peron [platform] vagy a jármű "
+"megállásának helye az úton [stop_position]"
+
+msgid "Is this a bus stop? add the tag highway=bus_stop"
+msgstr "Ez egy buszmegálló? Adja hozzá a [highway=bus_stop] címkét"
+
+msgid "Check if the note can be deleted"
+msgstr "Ellenőrizze, hogy törölhető-e a megjegyzés"
+
+msgid "The network should be on the transport lines and not on the stops"
+msgstr ""
+"A hálózat [network] megjelölésének a tömegközlekedési útvonalakon kell "
+"lennie, nem pedig a megállókon"
+
+msgid "The operator should be on the transport lines and not on the stops"
+msgstr ""
+"Az üzemeltető [operator] megjelölésének a tömegközlekedési útvonalakon kell "
+"lennie, nem pedig a megállókon"
+
+msgid ""
+"The line variant does not belong to any line, add it to the route_master "
+"relation"
+msgstr ""
+"Ez a vonalváltozat egyetlen útvonalhoz sem tartozik. Adja hozzá a "
+"[route_master] kapcsolathoz"
+
+msgid "The stop is not served by any line, add it to a route relation"
+msgstr ""
+"Ez a megálló egyetlen vonalhoz sem tartozik. Adja hozzá egy [route] "
+"kapcsolathoz"
+
+msgid "Missing public_transport tag on a public transport stop"
+msgstr "Hiányzik a [public_transport] címke a tömegközlekedési megállóról"
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the rails (stop_position)"
+msgstr ""
+"Határozza meg, hogy ez egy megálló/peron [platform] vagy a jármű "
+"megállásának helye a sínen [stop_position]"
+
+msgid "Missing legacy tag on a public transport stop"
+msgstr "Hiányzik az örökségcímke a tömegközlekedési megállóról"
+
+msgid ""
+"The network tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"A [network] hálózat címkének meg kell egyeznie a [route] és a [route_master] "
+"esetében: {0} vs {1}"
+
+msgid ""
+"The operator tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"Az [operator] üzemeltető címkének meg kell egyeznie a [route] és a "
+"[route_master] esetében: {0} vs {1}"
+
+msgid ""
+"The ref tag should be the same for the route and the route_master : {0} vs "
+"{1}"
+msgstr ""
+"A [ref] címkének meg kell egyeznie a [route] és a [route_master] esetében: "
+"{0} vs {1}"
+
+msgid ""
+"The colour tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"A [colour] szín címkének meg kell egyeznie a [route] és a [route_master] "
+"esetében: {0} vs {1}"
+
+msgid ""
+"The public transport mode should be the same for the route and the "
+"route_master : {0} vs {1}"
+msgstr ""
+"A tömegközlekedési mód címkéjének meg kell egyeznie a [route] és a "
+"[route_master] esetében: {0} vs {1}"
+
+msgid "Check the colour tag"
+msgstr "Ellenőrizze a [colour] szín címkét"
+
+msgid "The colour code should start with '#' followed by 3 or 6 digits"
+msgstr ""
+"A [colour] szín címkének # jellel kell kezdődnie, amelyet 3 vagy 6 számjegy "
+"követhet"
+
+msgid "The color of the public transport line should be in a colour tag"
+msgstr ""
+"A tömegközlekedési vonal színének a [colour] szín címkében kell szerepelnie"
+
+msgid "A bus stop is supposed to be a node"
+msgstr "A buszmegálló feltételezhetően egy pont"
+
+msgid "The interval is invalid (try a number of minutes)"
+msgstr ""
+"Érvénytelen [interval] követési időköz (próbálja meg a percek számát megadni)"
+
+msgid "The duration is invalid (try a number of minutes)"
+msgstr "Érvénytelen időtartam (próbálja meg a percek számát megadni)"
+
+msgid "Missing interval tag to specify the main interval"
+msgstr "Hiányzik az [interval] címke a fő követési időköz meghatározásához"
+
+msgid "Missing opening_hours tag"
+msgstr "Hiányzik az [opening_hours] nyitva tartás címke"
+
+msgid "Missing name on a public transport stop"
+msgstr "Hiányzik a [name] név a tömegközlekedési megállóról"
+
+msgid "Check the operator tag : this operator does not exist, it may be a typo"
+msgstr ""
+"Ellenőrizze az [operator] címkét: ilyen üzemeltető nem létezik, talán elírás "
+"történt"
+
+msgid "Check the network tag : this network does not exist, it may be a typo"
+msgstr ""
+"Ellenőrizze a [network] címkét: ilyen hálózat nem létezik, talán elírás "
+"történt"
+
+msgid ""
+"A bus station is usually a large area where many buses stop, check if you "
+"can draw this area"
+msgstr ""
+"A buszállomás általában egy nagyobb terület, ahol sok busz megáll. "
+"Ellenőrizze, hogy meg tudja-e rajzolni ezt a területet"
+
+msgid "Is this a bus or tram stop ? Add a tag to precise the kind of platform"
+msgstr ""
+"Ez busz- vagy villamosmegálló? A peron típusának pontosításához adjon hozzá "
+"egy címkét."
+
+msgid "Subway entrances should be mapped as nodes"
+msgstr ""
+
+msgid ""
+"The station entrance should be part of a building or a highway (steps, "
+"footway, etc)"
+msgstr ""
+
+msgid ""
+"The station entrance should be in part of a station: add it to a stop_area "
+"relation"
+msgstr ""

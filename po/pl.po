@@ -1,0 +1,188 @@
+#
+# Translators:
+# maro21 OSM, 2021
+# Dave Ska, 2022
+#
+msgid ""
+msgstr ""
+"Last-Translator: Dave Ska, 2022\n"
+"Language-Team: Polish (https://www.transifex.com/openstreetmap-france/"
+"teams/17462/pl/)\n"
+"Language: pl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+msgid "Uncompromising validation of transit data"
+msgstr "Bezkompromisowa walidacja danych przewozowych"
+
+msgid "Missing transportation mode, add a tag route = bus/coach/tram/etc"
+msgstr "Brak środka transportu, dodaj tag route=bus/tram/coach itp."
+
+msgid "Missing transportation mode, change tag route to route_master"
+msgstr "Zmień tag route na route_master"
+
+msgid ""
+"Missing public_transport:version tag on a public_transport route relation"
+msgstr "Relacji transportu publicznego brakuje tagu „public_transport:version”"
+
+msgid "Missing network tag on a public_transport relation"
+msgstr "Relacji transportu publicznego brakuje tagu „network”"
+
+msgid "Missing operator tag on a public_transport relation"
+msgstr "Relacji transportu publicznego brakuje tagu „operator”"
+
+msgid "Missing ref tag for line number on a public_transport relation"
+msgstr "Relacji transportu publicznego brakuje tagu „ref” (numer linii)"
+
+msgid "Missing from/to tag on a public_transport route relation"
+msgstr "Relacji transportu publicznego brakuje tagu „from” lub „to”"
+
+msgid "The stops may not be in the right order"
+msgstr "Przystanki mogą być w niewłaściwej kolejności"
+
+msgid "Is it a bus stop or a bus station?"
+msgstr "To przystanek czy dworzec autobusowy?"
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the road (stop_position)"
+msgstr ""
+"Określ, czy jest to przystanek (platform), czy miejsce zatrzymania na drodze "
+"(stop_position)"
+
+msgid "Is this a bus stop? add the tag highway=bus_stop"
+msgstr "Czy to przystanek autobusowy? Dodaj tag highway=bus_stop"
+
+msgid "Check if the note can be deleted"
+msgstr "Sprawdź, czy tag note można usunąć"
+
+msgid "The network should be on the transport lines and not on the stops"
+msgstr ""
+"Tag network powinien być na liniach transportu publicznego, nie na "
+"przystankach (dotyczy Francji)"
+
+msgid "The operator should be on the transport lines and not on the stops"
+msgstr ""
+"Tag operator powinien być na liniach transportu publicznego, nie na "
+"przystankach (dotyczy Francji)"
+
+msgid ""
+"The line variant does not belong to any line, add it to the route_master "
+"relation"
+msgstr ""
+"Ten wariant linii transportu publicznego nie jest przyporządkowany do żadnej "
+"linii, dodaj go do relacji route_master"
+
+msgid "The stop is not served by any line, add it to a route relation"
+msgstr ""
+"Ten przystanek nie jest obsługiwany przez żadną linię, dodaj go do relacji "
+"trasy"
+
+msgid "Missing public_transport tag on a public transport stop"
+msgstr "Przystankowi brakuje tagu „public_transport”"
+
+msgid ""
+"Specify if it is a stop (platform) or a location on the rails (stop_position)"
+msgstr ""
+"Określ, czy jest to peron (platform), czy miejsce zatrzymania na torach "
+"(stop_position)"
+
+msgid "Missing legacy tag on a public transport stop"
+msgstr "Brak podstawowego znacznika przystanku"
+
+msgid ""
+"The network tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"Tag network powinien być taki sam w relacji route jak i route_master: {0} vs "
+"{1}"
+
+msgid ""
+"The operator tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"Tag operator powinien być taki sam w relacji route jak i route_master: {0} "
+"vs {1}"
+
+msgid ""
+"The ref tag should be the same for the route and the route_master : {0} vs "
+"{1}"
+msgstr ""
+"Tag ref powinien być taki sam w relacji route jak i route_master: {0} vs {1}"
+
+msgid ""
+"The colour tag should be the same for the route and the route_master : {0} "
+"vs {1}"
+msgstr ""
+"Tag colour powinien być taki sam w relacji route jak i route_master: {0} vs "
+"{1}"
+
+msgid ""
+"The public transport mode should be the same for the route and the "
+"route_master : {0} vs {1}"
+msgstr ""
+"Środek transportu powinien być taki sam w relacji route jak i route_master: "
+"{0} vs {1}"
+
+msgid "Check the colour tag"
+msgstr "Sprawdź tag colour"
+
+msgid "The colour code should start with '#' followed by 3 or 6 digits"
+msgstr "Kod koloru powinien zaczynać się od \"#\" i mieć 3 lub 6 cyfr"
+
+msgid "The color of the public transport line should be in a colour tag"
+msgstr ""
+"Kolor linii transportu publicznego powinien być w tagu „colour”, nie „color”"
+
+msgid "A bus stop is supposed to be a node"
+msgstr "Przystanek autobusowy powinien być węzłem"
+
+msgid "The interval is invalid (try a number of minutes)"
+msgstr "Przedział jest niepoprawny (wpisz liczbę minut, np. 15 lub 00:15:00)"
+
+msgid "The duration is invalid (try a number of minutes)"
+msgstr ""
+"Czas trwania jest niepoprawny (wpisz liczbę minut, np. 15 lub 00:15:00)"
+
+msgid "Missing interval tag to specify the main interval"
+msgstr "Brak tagu \"interval\". Określ podstawowy przedział"
+
+msgid "Missing opening_hours tag"
+msgstr "Brak znacznika opening_hours"
+
+msgid "Missing name on a public transport stop"
+msgstr "Brak nazwy przystanku"
+
+msgid "Check the operator tag : this operator does not exist, it may be a typo"
+msgstr "Sprawdź tag \"operator\": ten zarządca nie istnieje, może to literówka"
+
+msgid "Check the network tag : this network does not exist, it may be a typo"
+msgstr "Sprawdź tag \"network\": ta sieć nie istnieje, może to literówka"
+
+msgid ""
+"A bus station is usually a large area where many buses stop, check if you "
+"can draw this area"
+msgstr ""
+"Dworzec autobusowy to zwykle duży obszar, gdzie zatrzymuje się wiele "
+"autobusów, spróbuj go narysować"
+
+msgid "Is this a bus or tram stop ? Add a tag to precise the kind of platform"
+msgstr "Dodaj highway=bus_stop lub tram=yes"
+
+msgid "Subway entrances should be mapped as nodes"
+msgstr "Wejścia do metra powinny być oznaczone jako węzły"
+
+msgid ""
+"The station entrance should be part of a building or a highway (steps, "
+"footway, etc)"
+msgstr ""
+"Wejście do stacji powinno być częścią budynku lub drogi (schody, chodnik "
+"itp.)"
+
+msgid ""
+"The station entrance should be in part of a station: add it to a stop_area "
+"relation"
+msgstr ""
+"Wejście do stacji powinno być częścią stacji: dodaj je do relacji stop_area"
