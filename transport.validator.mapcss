@@ -60,44 +60,34 @@ meta[lang=zh_TW]
 	description: "未妥協驗證的運輸資料";
 }
 
-relation[type=route]
-{
-	set route
-}
-
-*.route[!route][!disused:route]
+relation[type=route][!route][!disused:route]
 {
 	throwError: tr("Missing transportation mode, add a tag route = bus/coach/tram/etc");
 }
 
-relation[type=route_master]
-{
-	set route_master
-}
-
-*.route_master[!route_master][!route][!disused:route_master]
+relation[type=route_master][!route_master][!route][!disused:route_master]
 {
 	throwError: tr("Missing transportation mode, add a tag route = bus/coach/tram/etc");
 }
 
 /*the transport mode is specified with the wrong tag */
-*.route_master[!route_master][route]
+relation[type=route_master][!route_master][route]
 {
 	throwError: tr("Missing transportation mode, change tag route to route_master");
 	fixChangeKey: "route=>route_master";
 }
 
-*.route[route=~/^(bus|coach|train|subway|monorail|trolleybus|aerialway|funicular|ferry|tram|share_taxi|light_rail|school_bus|walking_bus)$/]
+relation[type=route][route=~/^(bus|coach|train|subway|monorail|trolleybus|aerialway|funicular|ferry|tram|share_taxi|light_rail|school_bus|walking_bus)$/]
 {
 	set pt_route;
 }
 
-*.route_master[route_master=~/^(bus|coach|train|subway|monorail|trolleybus|aerialway|funicular|ferry|tram|share_taxi|light_rail|school_bus|walking_bus)$/]
+relation[type=route_master][route_master=~/^(bus|coach|train|subway|monorail|trolleybus|aerialway|funicular|ferry|tram|share_taxi|light_rail|school_bus|walking_bus)$/]
 {
 	set pt_route_master;
 }
 
-*.pt_route[!public_transport:version]
+relation.pt_route[!public_transport:version]
 {
 	throwError: tr("Missing public_transport:version tag on a public_transport route relation");
 	-osmoseItemClassLevel: "2140/21401/3";
@@ -105,8 +95,8 @@ relation[type=route_master]
 	assertMatch: "relation type=route route=bus";
 }
 
-*.pt_route[!network],
-*.pt_route_master[!network]
+relation.pt_route[!network],
+relation.pt_route_master[!network]
 {
 	throwError: tr("Missing network tag on a public_transport relation");
 	-osmoseItemClassLevel: "2140/21402/3";
@@ -114,8 +104,8 @@ relation[type=route_master]
 	assertMatch: "relation type=route route=bus";
 }
 
-*.pt_route[!operator],
-*.pt_route_master[!operator]
+relation.pt_route[!operator],
+relation.pt_route_master[!operator]
 {
 	throwError: tr("Missing operator tag on a public_transport relation");
 	-osmoseItemClassLevel: "2140/21403/3";
@@ -123,8 +113,8 @@ relation[type=route_master]
 	assertMatch: "relation type=route route=bus";
 }
 
-*.pt_route[!ref],
-*.pt_route_master[!ref]
+relation.pt_route[!ref],
+relation.pt_route_master[!ref]
 {
 	throwWarning: tr("Missing ref tag for line number on a public_transport relation");
     -osmoseItemClassLevel: none;
@@ -132,8 +122,8 @@ relation[type=route_master]
 	assertMatch: "relation type=route route=bus";
 }
 
-*.pt_route[!from],
-*.pt_route[!to]
+relation.pt_route[!from],
+relation.pt_route[!to]
 {
 	throwError: tr("Missing from/to tag on a public_transport route relation");
 	-osmoseItemClassLevel: "2140/21405/3";
@@ -143,84 +133,68 @@ relation[type=route_master]
 	assertMatch: "relation type=route route=bus";
 }
 
-*.pt_route[tag(network)!=parent_tag(network)]
+relation.pt_route[tag(network)!=parent_tag(network)]
 {
 	throwError: tr("The network tag should be the same for the route and the route_master : {0} vs {1}", tag(network), parent_tag(network));
 }
 
-*.pt_route[tag(operator)!=parent_tag(operator)]
+relation.pt_route[tag(operator)!=parent_tag(operator)]
 {
 	throwError: tr("The operator tag should be the same for the route and the route_master : {0} vs {1}", tag(operator), parent_tag(operator));
 }
 
-*.pt_route[tag(ref)!=parent_tag(ref)]
+relation.pt_route[tag(ref)!=parent_tag(ref)]
 {
 	throwWarning: tr("The ref tag should be the same for the route and the route_master : {0} vs {1}", tag(ref), parent_tag(ref));
 }
 
-*.pt_route[tag(colour)!=parent_tag(colour)]
+relation.pt_route[tag(colour)!=parent_tag(colour)]
 {
 	throwWarning: tr("The colour tag should be the same for the route and the route_master : {0} vs {1}", tag(colour), parent_tag(colour));
 }
 
-*.pt_route[tag(route)!=parent_tag(route_master)]
+relation.pt_route[tag(route)!=parent_tag(route_master)]
 {
 	throwError: tr("The public transport mode should be the same for the route and the route_master : {0} vs {1}", tag(route), parent_tag(route_master));
 }
 
-*[colour][colour=~/^#/][colour!~/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/]
-{
-	set bad_colour
-}
-*.pt_route.bad_colour,
-*.pt_route_master.bad_colour
+relation.pt_route[colour][colour=~/^#/][colour!~/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/],
+relation.pt_route_master[colour][colour=~/^#/][colour!~/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/]
 {
 	throwError: tr("Check the colour tag");
 	-osmoseItemClassLevel: none;
 }
 
-*[colour][colour=~/^([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/]
-{
-	set colour_nohash
-}
-*.pt_route.colour_nohash,
-*.pt_route_master.colour_nohash
+relation.pt_route[colour][colour=~/^([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/],
+relation.pt_route_master[colour][colour=~/^([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/]
 {
 	throwError: tr("The colour code should start with '#' followed by 3 or 6 digits");
 	fixAdd: concat("colour=#", tag(colour));
 	-osmoseItemClassLevel: none;
 }
 
-*.pt_route[!colour][color],
-*.pt_route_master[!colour][color]
+relation.pt_route[!colour][color],
+relation.pt_route_master[!colour][color]
 {
 	throwError: tr("The color of the public transport line should be in a colour tag");
 	fixChangeKey: "color=>colour";
 }
 
-*.pt_route["fixme:relation"="order members"]
+relation.pt_route["fixme:relation"="order members"]
 {
 	throwWarning: tr("The stops may not be in the right order");
 	-osmoseItemClassLevel: none;
 }
 
 /* These values are not valid operator or network */
-*["operator"=~/STIF|Kéolis|Véolia/][inside("FR")]
-{
-	set bad_operator
-}
-*.pt_route.bad_operator,
-*.pt_route_master.bad_operator
+relation.pt_route["operator"=~/STIF|Kéolis|Véolia/][inside("FR")],
+relation.pt_route_master["operator"=~/STIF|Kéolis|Véolia/][inside("FR")]
 {
 	throwError: tr("Check the operator tag : this operator does not exist, it may be a typo");
 }
 
-*["network"=~/STIF|Kéolis|Véolia/][inside("FR")]
-{
-	set bad_network
-}
-*.pt_route.bad_network,
-*.pt_route_master.bad_network
+relation.pt_route["network"=~/STIF|Kéolis|Véolia/][inside("FR")],
+relation.pt_route_master["network"=~/STIF|Kéolis|Véolia/][inside("FR")]
 {
 	throwError: tr("Check the network tag : this network does not exist, it may be a typo");
 }
@@ -231,12 +205,7 @@ relation[highway=bus_stop]
 	throwError: tr("A bus stop is supposed to be a node");
 }
 
-node[highway=bus_stop]
-{
-	set ptv1_busstop
-}
-
-*.ptv1_busstop[amenity=bus_station]
+node[highway=bus_stop][amenity=bus_station]
 {
 	throwError: tr("Is it a bus stop or a bus station?");
 	fixRemove: "amenity";
@@ -248,7 +217,7 @@ node[amenity=bus_station]
 	-osmoseItemClassLevel: none;
 }
 
-*.ptv1_busstop[!public_transport]
+node[highway=bus_stop][!public_transport]
 {
 	throwError: tr("Specify if it is a stop (platform) or a location on the road (stop_position)");
 	group: tr("Missing public_transport tag on a public transport stop");
@@ -270,19 +239,14 @@ node[railway=tram_stop][!public_transport]
 	assertMatch: "node railway=tram_stop";
 }
 
-*[public_transport=platform]
-{
-	set ptv2_platform
-}
-
-node.ptv2_platform[!highway][!railway][!bus][!tram][!ferry][!walking_bus]
+node[public_transport=platform][!highway][!railway][!bus][!tram][!ferry][!walking_bus]
 {
 	throwError: tr("Is this a bus or tram stop ? Add a tag to precise the kind of platform");
 	group: tr("Missing legacy tag on a public transport stop");
 	-osmoseItemClassLevel: "2140/21412:1/3";
 }
 
-node.ptv2_platform[!highway][!railway][bus=yes]
+node[public_transport=platform][!highway][!railway][bus=yes]
 {
 	throwError: tr("Is this a bus stop? add the tag highway=bus_stop");
 	group: tr("Missing legacy tag on a public transport stop");
@@ -292,59 +256,63 @@ node.ptv2_platform[!highway][!railway][bus=yes]
 }
 
 /* The note tag is often used to specify the bus routes or other useful metadata that should have their own tag */
-*.ptv1_busstop[note],
-*.ptv1_busstop[note:fr][inside("FR")]
+node[highway=bus_stop][note],
+node[highway=bus_stop][note:fr][inside("FR")]
 {
 	throwWarning: tr("Check if the note can be deleted");
 }
 
-*.ptv1_busstop[network][inside("FR")]
+node[highway=bus_stop][network][inside("FR")]
 {
 	throwWarning: tr("The network should be on the transport lines and not on the stops");
 	fixRemove: "network";
 }
 
-*.ptv1_busstop[operator][inside("FR")]
+node[highway=bus_stop][operator][inside("FR")]
 {
 	throwWarning: tr("The operator should be on the transport lines and not on the stops");
 	fixRemove: "operator";
 }
 
-*.route_master > *.route
+relation[type=route_master] > relation[type=route]
 {
-	set route_in_master
+	set route_ok
 }
 
-*.pt_route!.route_in_master
+relation.pt_route!.route_ok
 {
 	throwError: tr("The line variant does not belong to any line, add it to the route_master relation");
 }
 
-*.route > node.ptv2_platform,
-*.route > way.ptv2_platform
+relation[type=route] > node[public_transport=platform]
 {
 	set platform_in_route
 }
+relation[type=route] > way[public_transport=platform]
+{
+	set way_platform_in_route
+}
 
-node.ptv2_platform!.platform_in_route
+node[public_transport=platform]!.platform_in_route
 {
 	throwError: tr("The stop is not served by any line, add it to a route relation");
 	-osmoseItemClassLevel: none;
 }
 
-node.platform_in_route[!name],
-way.platform_in_route[!name]
+node.platform_in_route[!name]
 {
 	throwWarning: tr("Missing name on a public transport stop");
 	-osmoseItemClassLevel: none;
 }
 
-*[interval][interval !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/]
+way.way_platform_in_route[!name]
 {
-	set bad_interval
+	throwWarning: tr("Missing name on a public transport stop");
+	-osmoseItemClassLevel: none;
 }
-*.pt_route.bad_interval,
-*.pt_route_master.bad_interval
+
+relation.pt_route[interval][interval !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/],
+relation.pt_route_master[interval][interval !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/]
 {
 	throwError: tr("The interval is invalid (try a number of minutes)");
 	assertMatch: "relation type=route route=bus interval=irregular";
@@ -359,12 +327,8 @@ way.platform_in_route[!name]
 	assertMatch: "relation type=route route=bus interval=00:70:00";
 }
 
-*[duration][duration !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/]
-{
-	set bad_duration
-}
-*.pt_route.bad_duration,
-*.pt_route_master.bad_duration
+relation.pt_route[duration][duration !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/],
+relation.pt_route_master[duration][duration !~ /^([0-9][0-9]?[0-9]?|[0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)$/]
 {
 	throwError: tr("The duration is invalid (try a number of minutes)");
 	assertMatch: "relation type=route route=bus duration=20minutes";
@@ -376,22 +340,14 @@ way.platform_in_route[!name]
 	assertNoMatch: "relation type=route route=bus duration=25:00";
 }
 
-*["interval:conditional"][!interval]
-{
-	set conditional_no_interval
-}
-*.pt_route.conditional_no_interval,
-*.pt_route_master.conditional_no_interval
+relation.pt_route["interval:conditional"][!interval],
+relation.pt_route_master["interval:conditional"][!interval]
 {
 	throwError: tr("Missing interval tag to specify the main interval");
 }
 
-*["interval:conditional"][!opening_hours]
-{
-	set conditional_no_hours
-}
-*.pt_route.conditional_no_hours,
-*.pt_route_master.conditional_no_hours
+relation.pt_route["interval:conditional"][!opening_hours],
+relation.pt_route_master["interval:conditional"][!opening_hours]
 {
 	throwError: tr("Missing opening_hours tag");
 }
@@ -405,46 +361,33 @@ relation[railway=train_station_entrance]
 	assertMatch: "way railway=subway_entrance";
 }
 
-relation[public_transport=stop_area]
-{
-	set stop_area
-}
-node[railway=subway_entrance]
-{
-	set subway_entrance
-}
-node[railway=train_station_entrance]
-{
-	set train_entrance
-}
-
-*.stop_area > *.subway_entrance
+relation[public_transport=stop_area] > node[railway=subway_entrance]
 {
 	set subway_entrance_in_stop_area
 }
-*.stop_area > *.train_entrance
+relation[public_transport=stop_area] > node[railway=train_station_entrance]
 {
 	set train_station_entrance_in_stop_area
 }
 
-*.subway_entrance!.subway_entrance_in_stop_area,
-*.train_entrance!.train_station_entrance_in_stop_area
+node[railway=subway_entrance]!.subway_entrance_in_stop_area,
+node[railway=train_station_entrance]!.train_station_entrance_in_stop_area
 {
 	throwError: tr("The station entrance should be in part of a station: add it to a stop_area relation");
 	-osmoseItemClassLevel: none;
 }
 
-way > *.subway_entrance
+way > node[railway=subway_entrance]
 {
 	set subway_entrance_in_way
 }
-way > *.train_entrance
+way > node[railway=train_station_entrance]
 {
 	set train_station_entrance_in_way
 }
 
-*.subway_entrance!.subway_entrance_in_way,
-*.train_entrance!.train_station_entrance_in_way
+node[railway=subway_entrance]!.subway_entrance_in_way,
+node[railway=train_station_entrance]!.train_station_entrance_in_way
 {
 	throwWarning: tr("The station entrance should be part of a building or a highway (steps, footway, etc)");
 	-osmoseItemClassLevel: none;
